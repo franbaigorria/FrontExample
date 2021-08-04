@@ -1,4 +1,7 @@
-import React from 'react';
+//Componente tarjeta de cada elemento de la api
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, removeFromCart } from '../actions/cartAction';
 import './Games.css';
 
 const stars = {
@@ -10,6 +13,10 @@ const stars = {
 };
 
 export const Card = (game) => {
+  const [isAdded, setIsAdded] = useState(false);
+  const dispatch = useDispatch();
+  const { price } = useSelector((state) => state.cart);
+
   if (game.steamRatingPercent > 20) {
     stars.a = 'fas';
   }
@@ -25,9 +32,26 @@ export const Card = (game) => {
   if (game.steamRatingPercent > 95) {
     stars.e = 'fas';
   }
+  const handleClickCard = () => {
+    const salePrice = parseFloat(game.salePrice);
+    if (!isAdded) {
+      const acc = price + salePrice;
+      dispatch(addToCart(game, acc));
+    } else {
+      const acc = price - salePrice;
+
+      dispatch(removeFromCart(game.gameID, acc));
+    }
+    setIsAdded(!isAdded);
+  };
   return (
     <div className="col">
-      <div className="card h-100 shadow-sm">
+      <div
+        className={`card h-100 shadow-sm ${isAdded && 'added'}`}
+        onClick={handleClickCard}>
+        <div className="saving">
+          <strong>%{Math.ceil(game.savings)} OFF</strong>
+        </div>
         <img src={game.thumb} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{game.title}</h5>

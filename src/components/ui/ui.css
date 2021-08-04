@@ -1,4 +1,4 @@
-.fixed{
-  position: sticky;
-  top: 0px;
+
+i,span,p, h5:hover{
+  cursor: pointer;
 }

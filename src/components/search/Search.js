@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+//Componente que se encarga de hacer el dispatch con las palabras que van a filtrar los juegos.
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
 import { searchGames } from '../actions/searchAction';
@@ -11,7 +12,6 @@ export const Search = () => {
   const dispatch = useDispatch();
 
   const { searchText } = formValue;
-  // const heroesFilter = useMemo(() => getHeroesByName(q), [q]);
 
   const handleSearch = (e) => {
     e.preventDefault();

@@ -1,3 +1,5 @@
+//Componente que renderiza las "novedades" de los juegos
+//para este caso práctico se decidió por utilizar una única imagen
 import React from 'react';
 import './News.css';
 

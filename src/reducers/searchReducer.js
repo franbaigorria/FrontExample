@@ -9,7 +9,7 @@ export const searchReducer = (state = initialState, action) => {
     case types.searchGames:
       return {
         ...state,
-        searchTerms: action.payload,
+        searchTerms: action.payload, //actualiza los términos que se utilizarán para el filtrado.
       };
     default:
       return state;

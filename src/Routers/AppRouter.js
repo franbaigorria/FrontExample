@@ -1,4 +1,6 @@
+//Componentes de rutas, en este caso se utilizó por razones exclusivamente prácticas.
 import React from 'react';
+
 import {
   BrowserRouter as Router,
   Switch,

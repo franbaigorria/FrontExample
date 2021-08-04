@@ -1,3 +1,5 @@
+//CustomHook para el uso de Formularios.
+//Devuelve el valor del input, la funcíon que lo actualiza y otra función que limpia el formulario(en este caso no se utilizó)
 import { useState } from 'react';
 
 export const useForm = (initialState = {}) => {

@@ -1,3 +1,9 @@
+//CustomHook para una solicitud Fetch, devuelve {
+//   data: null,
+//   loading: true,
+//   error: null,
+// }
+
 import { useEffect, useRef, useState } from 'react';
 
 export const useFetch = (url) => {

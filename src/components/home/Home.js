@@ -1,10 +1,11 @@
+//Container de la sección "Home"
+
 import React from 'react';
-// import { useDispatch } from 'react-redux';
 import { useFetch } from '../../hooks/useFetch';
-// import { saveGames } from '../actions/newsAction';
 import { GamesList } from '../gamesList/GamesList';
 import { News } from '../news/News';
 import { Search } from '../search/Search';
+import { Spinner } from '../ui/Spinner';
 
 import './Home.css';
 
@@ -18,7 +19,7 @@ export const Home = () => {
       <News />
       <Search />
       {error && <strong>ALGO SALIÓ MAL...</strong>}
-      {!loading && <GamesList data={data} />}
+      {loading ? <Spinner /> : <GamesList data={data} />}
     </div>
   );
 };

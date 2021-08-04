@@ -1,3 +1,4 @@
+//Creación del Store, en este caso Redux se utilizó por razones exclusivamente prácticas
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
