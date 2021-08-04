@@ -1,8 +1,8 @@
 //Combinación de todos los reducers
 import { combineReducers } from 'redux';
-import { newsReducer } from './newsReducer';
+import { searchReducer } from './searchReducer';
 
 export const rootReducer = combineReducers({
-  news: newsReducer,
+  search: searchReducer,
   //Demás reducers...
 });

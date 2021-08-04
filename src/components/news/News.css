@@ -1,0 +1,16 @@
+.container{
+display: flex;
+justify-content: center;
+width: 100%;
+}
+
+.img-new{
+  width: 100vw;
+  height: 400px;
+  min-width: 668px;
+  border-radius:0.4rem
+}
+
+.img-new:hover{
+  border: shadow 10px;
+}
